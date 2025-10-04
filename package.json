@@ -1,0 +1,97 @@
+{
+  "name": "unplugin-op-overloading",
+  "version": "0.0.1",
+  "private": false,
+  "packageManager": "bun@1.2.23",
+  "description": "Operator Overloading for JavaScript and TypeScript",
+  "type": "module",
+  "keywords": [
+    "unplugin",
+    "vite",
+    "webpack",
+    "rspack",
+    "rollup",
+    "rolldown",
+    "esbuild",
+    "farm"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/arafathusayn/unplugin-op-overloading#readme",
+  "bugs": {
+    "url": "https://github.com/arafathusayn/unplugin-op-overloading/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arafathusayn/unplugin-op-overloading.git"
+  },
+  "author": "Arafat Husayn <hello@arafat.dev>",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./vite": "./dist/vite.js",
+    "./webpack": "./dist/webpack.js",
+    "./rspack": "./dist/rspack.js",
+    "./rollup": "./dist/rollup.js",
+    "./rolldown": "./dist/rolldown.js",
+    "./esbuild": "./dist/esbuild.js",
+    "./farm": "./dist/farm.js",
+    "./api": "./dist/api.js",
+    "./*": "./*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "workspaces": [
+    ".",
+    "packages/*",
+    "examples/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "bun run lint --fix",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && unotp bun publish",
+    "prepublishOnly": "bun run build"
+  },
+  "dependencies": {
+    "magic-string": "^0.30.19",
+    "oxc-parser": "^0.93.0",
+    "unplugin": "^2.3.10",
+    "unplugin-utils": "^0.3.0"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config": "^7.2.6",
+    "@sxzz/prettier-config": "^2.2.4",
+    "@sxzz/test-utils": "^0.5.11",
+    "@types/bun": "latest",
+    "@types/node": "^24.6.2",
+    "bumpp": "^10.2.3",
+    "eslint": "^9.36.0",
+    "prettier": "^3.6.2",
+    "tsdown": "^0.15.6",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=24.6.2"
+  },
+  "prettier": "@sxzz/prettier-config"
+}

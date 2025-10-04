@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`rollup > basic.js 1`] = `
+"// basic.js
+const add = (() => {
+  "operator-overloading disabled";
+  const __lhs = a;
+  const __rhs = b;
+  const __sym = Symbol.for("+");
+  return __lhs != null && __lhs[__sym] !== undefined
+    ? __lhs[__sym](__rhs)
+    : (__lhs + __rhs);
+})();
+const multiply = (() => {
+  "operator-overloading disabled";
+  const __lhs = x;
+  const __rhs = y;
+  const __sym = Symbol.for("*");
+  return __lhs != null && __lhs[__sym] !== undefined
+    ? __lhs[__sym](__rhs)
+    : (__lhs * __rhs);
+})();
+
+export { add, multiply };
+"
+`;
