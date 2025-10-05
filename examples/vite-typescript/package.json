@@ -10,10 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "unplugin-op-overloading": "file:../.."
+    "unplugin-op-overloading/typescript-plugin": "file:../../packages/typescript-plugin"
   },
-  "devDependencies": {
-    "typescript": "~5.9.3",
-    "vite": "^7.1.7"
-  }
+  "trustedDependencies": [
+    "unrs-resolver"
+  ]
 }
