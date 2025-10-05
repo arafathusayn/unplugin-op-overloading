@@ -21,10 +21,14 @@
     "skipLibCheck": true,
     "noUncheckedSideEffectImports": true,
 
-    /* Language Service Plugins */
+    /* Operator Overloading Support */
     "plugins": [
       {
-        "name": "typescript-plugin"
+        "name": "unplugin-op-overloading/typescript-plugin"
+      },
+      {
+        "transform": "unplugin-op-overloading/typescript-plugin/transformer",
+        "transformProgram": true
       }
     ]
   },

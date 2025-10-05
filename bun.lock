@@ -29,7 +29,6 @@
       "name": "vite-typescript-example",
       "version": "0.0.0",
       "dependencies": {
-        "typescript-plugin": "file:../../packages/typescript-plugin",
         "unplugin-op-overloading": "file:../..",
       },
       "devDependencies": {
@@ -1046,8 +1045,6 @@
     "mlly/pkg-types": ["pkg-types@1.3.1", "", { "dependencies": { "confbox": "^0.1.8", "mlly": "^1.7.4", "pathe": "^2.0.1" } }, "sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ=="],
 
     "regjsparser/jsesc": ["jsesc@3.0.2", "", { "bin": { "jsesc": "bin/jsesc" } }, "sha512-xKqzzWXDttJuOcawBt4KnKHHIf5oQ/Cxax+0PWFG+DFDgHNAdi+TXECADI+RYiFUMmx8792xsMbbgXj4CwnP4g=="],
-
-    "vite-typescript-example/typescript-plugin": ["typescript-plugin@file:packages/typescript-plugin", { "devDependencies": { "typescript": "^5.9.3" }, "peerDependencies": { "typescript": ">=4.5.0" } }],
 
     "vite-typescript-example/unplugin-op-overloading": ["unplugin-op-overloading@file:", { "dependencies": { "magic-string": "^0.30.19", "oxc-parser": "^0.93.0", "unplugin": "^2.3.10", "unplugin-utils": "^0.3.0" }, "devDependencies": { "@sxzz/eslint-config": "^7.2.6", "@sxzz/prettier-config": "^2.2.4", "@sxzz/test-utils": "^0.5.11", "@types/bun": "latest", "@types/node": "^24.6.2", "bumpp": "^10.2.3", "eslint": "^9.36.0", "prettier": "^3.6.2", "tsdown": "^0.15.6", "tsx": "^4.20.6", "typescript": "^5.9.3", "vite": "^7.1.9", "vitest": "^3.2.4" } }],
 

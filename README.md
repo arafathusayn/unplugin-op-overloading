@@ -1,5 +1,3 @@
-# unplugin-op-overloading
-
 Operator overloading for JavaScript and TypeScript using a build-time transformation.
 
 ## Features
@@ -385,23 +383,32 @@ const sum = (() => {
 
 ## TypeScript Support
 
-### TypeScript Language Service Plugin
+This package includes **two TypeScript plugins** that work together to provide comprehensive operator overloading support:
 
-For a better IDE experience without `@ts-expect-error` comments, use the included TypeScript Language Service Plugin.
+### 1. Language Service Plugin (IDE Support)
+
+Suppresses TypeScript errors in your editor for a clean development experience.
+
+**What it does:**
+
+- ✅ Removes red squiggles for operator overloading in VS Code, WebStorm, and other TypeScript-aware IDEs
+- ✅ Works automatically with files containing `"use operator overloading"`
+- ✅ No `@ts-expect-error` comments needed
+- ⚠️ **IDE-only:** Does not affect `tsc` compilation
+
+**Setup:**
 
 Add to your `tsconfig.json`:
 
 ```json
 {
   "compilerOptions": {
-    "plugins": [
-      { "name": "unplugin-op-overloading/typescript-plugin" }
-    ]
+    "plugins": [{ "name": "unplugin-op-overloading/typescript-plugin" }]
   }
 }
 ```
 
-**VS Code Setup:**
+**VS Code Configuration:**
 
 Create `.vscode/settings.json`:
 
@@ -414,7 +421,78 @@ Create `.vscode/settings.json`:
 
 Restart TypeScript server: `Cmd/Ctrl + Shift + P` → "TypeScript: Restart TS Server"
 
-**Important:** The TypeScript plugin only suppresses errors in your IDE. Running `tsc` directly will still show errors. Use build tools (Vite/Webpack) for production builds.
+### 2. TypeScript Transformer Plugin (Compile-time Transformation)
+
+Transforms operator overloading syntax during TypeScript compilation.
+
+**What it does:**
+
+- ✅ Transforms code when using `tsc` directly
+- ✅ Alternative to using build tool plugins (Vite/Webpack/Rollup)
+- ✅ Useful for libraries or projects that rely on TypeScript's native compilation
+- ✅ Enables operator overloading without bundler configuration
+
+**Setup:**
+
+Add to your `tsconfig.json` (in addition to the Language Service Plugin):
+
+```json
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "unplugin-op-overloading/typescript-plugin"
+      },
+      {
+        "transform": "unplugin-op-overloading/typescript-plugin/transformer",
+        "transformProgram": true
+      }
+    ]
+  }
+}
+```
+
+### Which Plugin Configuration Should I Use?
+
+**For most projects using build tools (Vite/Webpack/Rollup/esbuild):**
+
+```json
+{
+  "compilerOptions": {
+    "plugins": [{ "name": "unplugin-op-overloading/typescript-plugin" }]
+  }
+}
+```
+
+- Use the **Language Service Plugin** for IDE support
+- Use the **build tool plugin** (configured separately) for actual transformation
+- The Transformer Plugin is optional in this case
+
+**For projects using `tsc` directly (libraries, standalone TypeScript):**
+
+```json
+{
+  "compilerOptions": {
+    "plugins": [
+      { "name": "unplugin-op-overloading/typescript-plugin" },
+      {
+        "transform": "unplugin-op-overloading/typescript-plugin/transformer",
+        "transformProgram": true
+      }
+    ]
+  }
+}
+```
+
+- Use **both plugins** for complete support
+- Language Service Plugin provides IDE support
+- Transformer Plugin handles code transformation during `tsc` compilation
+
+### Important Notes
+
+⚠️ **The Language Service Plugin only affects IDE experience.** Running `tsc` directly will still show errors unless you also use the Transformer Plugin or a build tool plugin.
+
+✅ **Recommended:** Use build tools (Vite/Webpack/Rollup) instead of `tsc` for most projects. They provide better bundling, optimization, and full operator overloading support.
 
 ### TypeScript Example
 

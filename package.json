@@ -1,6 +1,6 @@
 {
   "name": "unplugin-op-overloading",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "packageManager": "bun@1.2.23",
   "description": "Operator Overloading for JavaScript and TypeScript",
@@ -26,7 +26,8 @@
   },
   "author": "Arafat Husayn <hello@arafat.dev>",
   "files": [
-    "dist"
+    "dist",
+    "packages/*/dist"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -41,7 +42,8 @@
     "./esbuild": "./dist/esbuild.js",
     "./farm": "./dist/farm.js",
     "./api": "./dist/api.js",
-    "./*": "./*"
+    "./typescript-plugin": "./dist/typescript-plugin.cjs",
+    "./typescript-plugin/transformer": "./packages/typescript-plugin/dist/transformer.js"
   },
   "typesVersions": {
     "*": {
@@ -62,7 +64,8 @@
   "scripts": {
     "lint": "eslint --cache .",
     "lint:fix": "bun run lint --fix",
-    "build": "tsdown",
+    "build": "bun run build:plugin && tsdown && bun run scripts/postbuild.ts",
+    "build:plugin": "cd packages/typescript-plugin && bun run build",
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",

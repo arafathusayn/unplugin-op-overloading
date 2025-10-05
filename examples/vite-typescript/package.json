@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "typescript-plugin": "file:../../packages/typescript-plugin",
     "unplugin-op-overloading": "file:../.."
   },
   "devDependencies": {
