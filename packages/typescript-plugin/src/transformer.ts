@@ -62,8 +62,8 @@ const OPERATOR_SYMBOLS: Record<string, string> = {
 // eslint-disable-next-line import/no-default-export
 export default function transformer(
   program: ts.Program,
-  _pluginConfig: ts.PluginConfig,
-  { ts: _tsInstance }: ts.TransformerExtras,
+  _pluginConfig: never,
+  { ts: _tsInstance }: never,
 ) {
   // Wrap getSemanticDiagnostics to filter operator errors during type checking
   const originalGetSemanticDiagnostics =
