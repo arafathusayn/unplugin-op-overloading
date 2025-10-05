@@ -1,6 +1,6 @@
 {
   "name": "unplugin-op-overloading",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "packageManager": "bun@1.2.23",
   "description": "Operator Overloading for JavaScript and TypeScript",
@@ -26,8 +26,7 @@
   },
   "author": "Arafat Husayn <hello@arafat.dev>",
   "files": [
-    "dist",
-    "packages/*/dist"
+    "dist"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -43,7 +42,7 @@
     "./farm": "./dist/farm.js",
     "./api": "./dist/api.js",
     "./typescript-plugin": "./dist/typescript-plugin.cjs",
-    "./typescript-plugin/transformer": "./packages/typescript-plugin/dist/transformer.js"
+    "./typescript-plugin/transformer": "./dist/typescript-plugin/transformer.js"
   },
   "typesVersions": {
     "*": {
@@ -53,11 +52,6 @@
       ]
     }
   },
-  "workspaces": [
-    ".",
-    "packages/*",
-    "examples/*"
-  ],
   "publishConfig": {
     "access": "public"
   },
