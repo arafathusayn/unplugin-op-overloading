@@ -2,12 +2,12 @@ Operator overloading for JavaScript and TypeScript using a build-time transforma
 
 ## Features
 
-✨ **Natural Syntax** - Write `a + b` instead of `a[Symbol.for('+')](b)`
-🔧 **Build-time Transformation** - Zero runtime overhead, pure JavaScript output
-📦 **Universal** - Works with Vite, Webpack, Rollup, esbuild, Rspack, and Rolldown
-🎯 **Opt-in** - Uses `"use operator overloading"` directive for explicit control
-🛡️ **Type-safe** - Includes TypeScript Language Service Plugin for IDE support
-⚡ **Fast** - Uses oxc-parser for blazing-fast AST parsing
+- ✨ **Natural Syntax** - Write `a + b` instead of `a[Symbol.for('+')](b)`
+- 🔧 **Build-time Transformation** - Zero runtime overhead, pure JavaScript output
+- 📦 **Universal** - Works with Vite, Webpack, Rollup, esbuild, Rspack, and Rolldown
+- 🎯 **Opt-in** - Uses `"use operator overloading"` directive for explicit control
+- 🛡️ **Type-safe** - Includes TypeScript Language Service Plugin for IDE support
+- ⚡ **Fast** - Uses oxc-parser for blazing-fast AST parsing
 
 ## Installation
 

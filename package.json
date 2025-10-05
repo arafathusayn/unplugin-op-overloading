@@ -1,6 +1,6 @@
 {
   "name": "unplugin-op-overloading",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "packageManager": "bun@1.2.23",
   "description": "Operator Overloading for JavaScript and TypeScript",
