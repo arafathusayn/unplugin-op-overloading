@@ -13,10 +13,12 @@ The `typescript-plugin-operator-overloading` enhances your IDE experience by sup
 
 ## Installation
 
-The plugin is included in the monorepo workspace:
+The plugin is included with `unplugin-op-overloading`:
 
 ```bash
-bun install
+npm i -D unplugin-op-overloading
+# or
+bun add -d unplugin-op-overloading
 ```
 
 ## Configuration
@@ -30,7 +32,7 @@ Add the plugin to your `tsconfig.json`:
   "compilerOptions": {
     "plugins": [
       {
-        "name": "typescript-plugin-operator-overloading"
+        "name": "unplugin-op-overloading/typescript-plugin"
       }
     ]
   }
@@ -87,7 +89,7 @@ Enable debug logging to see which errors are suppressed:
   "compilerOptions": {
     "plugins": [
       {
-        "name": "typescript-plugin-operator-overloading",
+        "name": "unplugin-op-overloading/typescript-plugin",
         "debug": true
       }
     ]
@@ -143,7 +145,7 @@ The plugin will hide these in your editor, but `tsc` will still use them.
 
 2. **Restart TS Server**: Cmd/Ctrl + Shift + P → "TypeScript: Restart TS Server"
 
-3. **Verify plugin installed**: Check `node_modules/typescript-plugin-operator-overloading`
+3. **Verify plugin installed**: Check `node_modules/unplugin-op-overloading/dist/typescript-plugin.js`
 
 4. **Check logs** (debug mode enabled):
    ```
