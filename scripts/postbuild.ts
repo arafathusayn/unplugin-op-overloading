@@ -32,6 +32,19 @@ try {
   process.exit(1)
 }
 
+// Create package.json in typescript-plugin directory to mark it as CommonJS
+// This is needed because the main package.json has "type": "module"
+const tsPluginPackageJson = {
+  type: 'commonjs',
+}
+
+writeFileSync(
+  resolve(tsPluginDistDir, 'package.json'),
+  JSON.stringify(tsPluginPackageJson, null, 2),
+  'utf8',
+)
+console.log('✓ Created dist/typescript-plugin/package.json')
+
 // Create typescript-plugin.cjs wrapper (must be .cjs for CommonJS in ES module package)
 const pluginJs = `// Re-export the TypeScript Language Service Plugin
 module.exports = require('./typescript-plugin/index.js');
