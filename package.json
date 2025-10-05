@@ -63,7 +63,7 @@
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "release": "bumpp && unotp bun publish",
+    "release": "bumpp && bun publish",
     "prepublishOnly": "bun run build"
   },
   "dependencies": {
